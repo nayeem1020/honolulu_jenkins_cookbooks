@@ -33,7 +33,7 @@ In Route53, create the following CNAMEs for the subdomains that the stack will u
 * **samplepipeline** - become_production_jenkins job will point this subdomain to the current Jenkins
 
 ## Launching the Pipeline
-From a development environment (see the [wiki](https://github.com/cdsimplified/cdsimplified_commons/wiki/Development-Environment-Setup)), you have a couple options to launch a complete Honolulu Answers pipeline:
+From a development environment (see the [wiki](https://github.com/nayeem1020/cdsimplified_commons/wiki/Development-Environment-Setup)), you have a couple options to launch a complete Honolulu Answers pipeline:
 
 ###Fully Automated, One Ruby Command Setup
 
@@ -90,7 +90,7 @@ The templates don't do much templating (only the source control repo URL) so you
 
 **experimental**: There's a script in the cdri repo which will look at an existing Jenkins server and extract the jobs. To try it, check out the cdri repo and run these commands (assuming you have the cdri and jenkins_chef_cookbooks repos checked out side by side):
 
-    ruby bin/export_jenkins_jobs.rb --server http://jenkinsserver/ --repo https://github.com/cdsimplified/honolulu_answers.git
+    ruby bin/export_jenkins_jobs.rb --server http://jenkinsserver/ --repo https://github.com/nayeem1020/honolulu_answers.git
     cp -R /tmp/jenkins-jobs/*.xml.erb ../jenkins_chef_cookbooks/jenkins-configuration/templates/default/
     cd ../jenkins_chef_cookbooks
     git status
@@ -107,8 +107,8 @@ You have two options: you can manually run the CloudFormation script as detailed
 
 The two jobs in question are:
 
-* **create-new-jenkins**: this job will kick off the create-new-jenkins.sh, which should contain a script that runs the cloudformation script. You can probably just steal [the one we wrote for over here.](https://github.com/cdsimplified/honolulu_answers/blob/master/pipeline/create-new-jenkins.sh)
-* **become-production-jenkins**: this job will call the script to change the Route 53 entry for your pipeline resource record. Changing Route 53 entries is a huge pain, so maybe you would like to steal [the ruby script we wrote exactly for that purpose](https://github.com/cdsimplified/honolulu_answers/blob/master/pipeline/bin/route53switch.rb)?
+* **create-new-jenkins**: this job will kick off the create-new-jenkins.sh, which should contain a script that runs the cloudformation script. You can probably just steal [the one we wrote for over here.](https://github.com/nayeem1020/honolulu_answers/blob/master/pipeline/create-new-jenkins.sh)
+* **become-production-jenkins**: this job will call the script to change the Route 53 entry for your pipeline resource record. Changing Route 53 entries is a huge pain, so maybe you would like to steal [the ruby script we wrote exactly for that purpose](https://github.com/nayeem1020/honolulu_answers/blob/master/pipeline/bin/route53switch.rb)?
 
 Then, when you need a new Jenkins, just run the create-new-jenkins job. Once it completes, go into the OpsWorks console to find your new stack, open it up, and then run the become-production-jenkins job on that server and it'll become the new production instance.
 

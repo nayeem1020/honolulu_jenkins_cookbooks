@@ -4,7 +4,7 @@
     "Parameters": {
         "repository": {
             "Type": "String",
-            "Default": "https://github.com/cdsimplified/honolulu_answers.git",
+            "Default": "https://github.com/nayeem1020/honolulu_answers.git",
             "Description": "The github repository where you code is stored. Note: this repoistory must be public."
         },
         "branch": {
@@ -323,7 +323,7 @@
                 "UseCustomCookbooks": true,
                 "CustomCookbooksSource": {
                     "Type": "git",
-                    "Url": "https://github.com/cdsimplified/honolulu_jenkins_cookbooks.git"
+                    "Url": "https://github.com/nayeem1020/honolulu_jenkins_cookbooks.git"
                 }
             }
         },

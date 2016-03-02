@@ -12,7 +12,7 @@
     },
     "repository": {
       "Type": "String",
-      "Default": "https://github.com/cdsimplified/honolulu_answers.git",
+      "Default": "https://github.com/nayeem1020/honolulu_answers.git",
       "Description": "The github repository where you code is stored. Note: this repoistory must be public."
     },
     "branch": {
@@ -1453,7 +1453,7 @@
                       "mkdir -p /opt/aws/opsworks/current;",
                       "mkdir -p /var/lib/aws/opsworks/data/nodes;",
                       "mkdir -p /var/lib/aws/opsworks/data/data_bags;",
-                      "git clone https://github.com/cdsimplified/honolulu_jenkins_cookbooks.git /opt/aws/opsworks/current;",
+                      "git clone https://github.com/nayeem1020/honolulu_jenkins_cookbooks.git /opt/aws/opsworks/current;",
                       "cd /opt/aws/opsworks/current;berks vendor;",
                       "aws --region ",
                       { "Ref" : "AWS::Region" },
